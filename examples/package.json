@@ -1,0 +1,14 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-script start"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "qy-create-react": "^1.0.1"
+  }
+}
