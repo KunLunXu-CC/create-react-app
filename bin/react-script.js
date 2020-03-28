@@ -18,11 +18,12 @@ process.on('unhandledRejection', err => {
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(
-  x => x === 'build' || x === 'eject' || x === 'start' || x === 'test'
+  x => x === 'build' || x === 'start'
 );
+
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 
-if (['start'].includes(script)) {
+if (['start', 'build'].includes(script)) {
   require(path.resolve(__dirname, `../scripts/${script}`));
   // process.exit(1);
 } else {
