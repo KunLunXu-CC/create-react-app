@@ -33,7 +33,7 @@ module.exports = {
     rules: [              
       {
         test: /\.(mjs|js|jsx)$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!qy-create-react)/,
         use: [
           {
             loader: 'babel-loader',
