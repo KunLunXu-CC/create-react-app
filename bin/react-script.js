@@ -24,6 +24,11 @@ const scriptIndex = args.findIndex(
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 
 if (['start', 'build'].includes(script)) {
+
+  // 设置环境变量
+  require('../utils/setEnv')(script);
+
+  // 执行脚本
   require(path.resolve(__dirname, `../scripts/${script}`));
   // process.exit(1);
 } else {
