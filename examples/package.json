@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "qy-create-react": "^1.0.1"
+    "qy-create-react": "^1.0.2"
   }
 }

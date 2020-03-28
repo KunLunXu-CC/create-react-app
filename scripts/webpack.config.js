@@ -34,7 +34,21 @@ module.exports = {
       {
         test: /\.(mjs|js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: require('../.babelrc'), 
+          },
+          {
+            loader: 'eslint-loader',
+            options: {
+              cache: true,
+              baseConfig: require('../.eslintrc'),
+              eslintPath: require.resolve('eslint'),
+              formatter: require('eslint-friendly-formatter'),
+            }, 
+          },
+        ],
       },
       {
         test: cssRegex,
