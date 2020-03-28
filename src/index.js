@@ -3,7 +3,7 @@ import reactDom from 'react-dom';
 
 const App = () => (
   <div>
-    test page
+    test page1
   </div>
 );
 reactDom.render(<App/>, document.getElementById('root'));
