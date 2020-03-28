@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // html 模板
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
-  template: path.resolve(__dirname, '../public/index.html'),
+  template: path.resolve(__dirname, '../../public/index.html'),
 });
 
 // 提取样式为单独的文件
@@ -16,7 +16,7 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
 
 // 拷贝 public 内文件
 const copyWebpackPlugin = new CopyWebpackPlugin(
-  [{ from: path.resolve(__dirname, '../public') }]
+  [{ from: path.resolve(__dirname, '../../public') }]
 );
 
 const cssRegex = /\.(css|scss)$/;
@@ -24,9 +24,9 @@ const cssModuleRegex = /\.module\.(css|scss)$/;
 
 module.exports = {
   mode: 'development',                              
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: path.resolve(__dirname, '../../src/index.js'),
   output: {                                         
-    path: path.resolve(__dirname, '../build'),      
+    path: path.resolve(__dirname, '../../build'),      
     filename: 'js/[name].[hash].bundle.js',         
   },
   module: {
@@ -37,13 +37,13 @@ module.exports = {
         use: [
           {
             loader: 'babel-loader',
-            options: require('../.babelrc'), 
+            options: require('../../.babelrc'), 
           },
           {
             loader: 'eslint-loader',
             options: {
               cache: true,
-              baseConfig: require('../.eslintrc'),
+              baseConfig: require('../../.eslintrc'),
               eslintPath: require.resolve('eslint'),
               formatter: require('eslint-friendly-formatter'),
             }, 

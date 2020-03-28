@@ -3,8 +3,8 @@
 const path = require('path');
 const chalk = require('chalk');
 const webpack = require('webpack');
-const webpackConfig = require('./webpack.config');
 const WebpackDevServer = require('webpack-dev-server');
+const webpackConfig = require('./webpack/webpack.config');
 
 // 编译器
 const compiler = webpack(webpackConfig);
