@@ -1,0 +1,30 @@
+.menu {
+  border-right: 1px solid rgba(29,35,41,.05);
+
+  &-logo {
+    height: 64px;
+    padding: 0 24px;
+
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+
+    > img {
+      height: 30px;
+    }
+
+    > h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #1890ff;
+      padding-left: 12px;
+    }
+  }
+
+  :global {
+    .ant-menu-inline {
+      border-right: none;
+    }
+  }
+}

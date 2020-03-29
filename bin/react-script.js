@@ -24,17 +24,19 @@ const scriptIndex = args.findIndex(
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 
 if (['start', 'build'].includes(script)) {
-
   // 设置环境变量
-  require('../utils/setEnv')(script);
+  const env = { ... process.env };
+  process.env = {
+    ... env,
+    NODE_ENV: script === 'start' ? 'development' : 'production',
+    PROJECT_PATH: env.NPM_DEV
+      ? path.resolve(__dirname, '../examples')
+      : path.resolve(__dirname, '../../../'),
+  };
 
   // 执行脚本
   require(path.resolve(__dirname, `../scripts/${script}`));
   // process.exit(1);
 } else {
-  console.log('Unknown script "' + script + '".');
-  console.log('Perhaps you need to update react-scripts?');
-  console.log(
-    'See: https://facebook.github.io/create-react-app/docs/updating-to-new-releases'
-  );
+  console.log('脚本不存在!');
 }

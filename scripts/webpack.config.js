@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const { ProvidePlugin, DefinePlugin } = require('webpack');
+
 // html 模板
 const htmlWebpackPlugin = new HtmlWebpackPlugin({
   template: path.resolve(__dirname, '../public/index.html'),
@@ -19,25 +21,36 @@ const copyWebpackPlugin = new CopyWebpackPlugin(
   [{ from: path.resolve(__dirname, '../public') }]
 );
 
+// 自动加载
+const providePlugin = new ProvidePlugin({
+  _: 'lodash',
+});
+
+// 全局常量定义
+const definePlugin = new DefinePlugin({
+  _DEV_: process.env.NODE_ENV === 'development',
+  PROJECT_PATH: JSON.stringify(process.env.PROJECT_PATH),
+});
+
 const cssRegex = /\.(css|scss)$/;
 const cssModuleRegex = /\.module\.(css|scss)$/;
 
 module.exports = {
-  mode: process.env.NODE_ENV,                              
+  mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '../src/index.js'),
-  output: {                                         
-    path: path.resolve(__dirname, '../build'),      
-    filename: 'js/[name].[hash].bundle.js',         
+  output: {
+    path: path.resolve(__dirname, '../build'),
+    filename: 'js/[name].[hash].bundle.js',
   },
   module: {
-    rules: [              
+    rules: [
       {
         test: /\.(mjs|js|jsx)$/,
         exclude: /node_modules\/(?!qy-create-react)/,
         use: [
           {
             loader: 'babel-loader',
-            options: require('../.babelrc'), 
+            options: require('../.babelrc'),
           },
           {
             loader: 'eslint-loader',
@@ -46,7 +59,7 @@ module.exports = {
               baseConfig: require('../.eslintrc'),
               eslintPath: require.resolve('eslint'),
               formatter: require('eslint-friendly-formatter'),
-            }, 
+            },
           },
         ],
       },
@@ -103,6 +116,8 @@ module.exports = {
   },
 
   plugins: [
+    definePlugin,
+    providePlugin,
     htmlWebpackPlugin,
     copyWebpackPlugin,
     miniCssExtractPlugin,

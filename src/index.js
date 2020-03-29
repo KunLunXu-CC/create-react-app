@@ -1,9 +1,5 @@
 import React from 'react';
 import reactDom from 'react-dom';
+import Layout from './Layout';
 
-const App = () => (
-  <div>
-    test page1
-  </div>
-);
-reactDom.render(<App/>, document.getElementById('root'));
+reactDom.render(<Layout/>, document.getElementById('root'));
