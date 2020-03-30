@@ -39,6 +39,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
+    publicPath: '/',
     path: path.resolve(__dirname, '../build'),
     filename: 'js/[name].[hash].bundle.js',
   },
@@ -125,5 +126,10 @@ module.exports = {
 
   resolve: {
     extensions: ['.mjs', '.js', '.jsx'],
+  },
+
+  devServer: {
+    // 该选项配置  output.publicPath: '/' 解决: BrowserRouter 路由刷新时找不到页面 BUG
+    historyApiFallback: true,
   },
 };

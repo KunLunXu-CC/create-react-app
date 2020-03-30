@@ -1,5 +1,6 @@
 import React from 'react';
 import Menu from './Menu';
+import Body from './Body';
 import scss from './index.module.scss';
 
 export default () => (
@@ -9,11 +10,8 @@ export default () => (
       <div className={scss['layout-header']}>
 
       </div>
-      <div className={scss['layout-body']}>
-
-      </div>
+      <Body/>
       <div className={scss['layout-footer']}>
-
       </div>
     </div>
   </div>
