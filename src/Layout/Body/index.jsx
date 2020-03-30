@@ -7,10 +7,15 @@ import { Switch, Route } from 'react-router-dom';
 // 读取配置文件
 const config = utils.getConfig();
 
+// 读取路由
+const router = utils.getRoots(_.get(config, 'menu') || []).reduce(
+  (total, ele) => ([... total, ... (ele.router)]), []
+);
+
 export default () => (
   <div className={scss.body}>
     <Switch>
-      {(_.get(config, 'router') || []).map((v, index) => (
+      {router.map((v, index) => (
         <Route key ={index} {... v}/>
       ))}
     </Switch>

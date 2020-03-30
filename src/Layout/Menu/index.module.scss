@@ -3,8 +3,8 @@
 
   &-logo {
     height: 64px;
+    width: 220px;
     padding: 0 24px;
-
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -26,5 +26,12 @@
     .ant-menu-inline {
       border-right: none;
     }
+  }
+}
+
+.menu-collapsed {
+  .menu-logo {
+    width: 64px;
+    overflow: hidden;
   }
 }
