@@ -57,6 +57,16 @@ const useStateHook = () => {
     });
   };
 
+  // 菜单 props
+  const menuControlledProps = useMemo(() => (collapsed ? {
+    selectedKeys,
+    inlineCollapsed: collapsed,
+  } : {
+    openKeys,
+    selectedKeys,
+    inlineCollapsed: collapsed,
+  }), [collapsed, selectedKeys, openKeys]);
+
   useEffect(() => {
     const menuList = _.get(config, 'menu') || [];
     const findMenu = utils.getRoots(menuList).find(
@@ -79,12 +89,11 @@ const useStateHook = () => {
   }, [location.pathname]);
 
   return {
-    openKeys,
     collapsed,
     onSelectMenu,
     menuCholdren,
     onOpenChange,
-    selectedKeys,
+    menuControlledProps,
   };
 };
 
@@ -97,16 +106,16 @@ export default () => {
       { [scss['menu-collapsed']]: state.collapsed }
     )}>
       <div className={scss['menu-logo']}>
-        <img src={logo} alt="logo"/>
-        <h1>脚手架</h1>
+        <div className={scss['menu-logo-body']}>
+          <img src={logo} alt="logo"/>
+          <h1>脚手架</h1>
+        </div>
       </div>
       <Menu
         mode="inline"
         onSelect={state.onSelectMenu}
         onOpenChange={state.onOpenChange}
-        inlineCollapsed={state.collapsed}
-        openKeys={state.collapsed ? void 0 : state.openKeys}
-        selectedKeys={state.selectedKeys}>
+        {... state.menuControlledProps}>
         {state.menuCholdren}
       </Menu>
     </div>
