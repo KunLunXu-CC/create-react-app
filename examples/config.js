@@ -1,8 +1,9 @@
+import React from 'react';
 import logo from './img/KDpgvguMpGfqaHPjicRK.svg';
 
 export default {
-  logo,                  // 自定义 logo
-  logoTitle: '测试标题',  // logo 旁边的标题
+  logo,                             // 自定义 logo
+  logoTitle: <span>测试标题</span>,  // logo 旁边的标题: ReactElement
   iconFont: '//at.alicdn.com/t/font_1141137_lyeqynh5bq.js', // iconfont.cn 图标地址
 
   menu: [   // 菜单配置

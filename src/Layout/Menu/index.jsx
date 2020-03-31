@@ -128,9 +128,9 @@ export default () => {
       { [scss['menu-collapsed']]: state.collapsed }
     )}>
       <div className={scss['menu-logo']}>
-        <div className={scss['menu-logo-body']}>
-          <img src={config.logo || logo} alt="logo"/>
-          <h1>{config.logoTitle}</h1>
+        <img src={config.logo || logo} alt="logo"/>
+        <div className={scss['menu-logo-title']}>
+          {config.logoTitle}
         </div>
       </div>
       <Menu

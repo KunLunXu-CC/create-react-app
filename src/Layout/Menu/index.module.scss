@@ -5,26 +5,30 @@
     height: 64px;
     width: 220px;
     padding: 0 24px;
-    display: flex;
     cursor: pointer;
-    align-items: center;
+    overflow: hidden;
     transition: width 0.5s;
 
-    &-body {
-      display: flex;
-      img {
-        height: 30px;
-      }
+    display: flex;
+    align-items: center;
 
-      h1 {
-        margin: 0;
-        width: 200px;
-        font-size: 20px;
-        font-weight: 500;
-        color: #1890ff;
-        padding-left: 12px;
-        transition: opacity 0.5s;
-      }
+    img {
+      height: 50%;
+    }
+
+    &-title {
+      margin: 0;
+      height: 100%;
+      width: 200px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #1890ff;
+      padding-left: 12px;
+      transition: opacity 0.5s;
+
+      flex: none;
+      display: flex;
+      align-items: center;
     }
   }
 
