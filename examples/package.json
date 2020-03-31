@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "react-script start",
+    "start": "cross-env CONFIG_PATH=./src/config react-script start",
     "build": "react-script build",
     "link:qy": "npm link qy-create-react"
   },
