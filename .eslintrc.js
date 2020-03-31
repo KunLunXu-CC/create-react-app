@@ -11,9 +11,10 @@ module.exports = {
   },
   globals: {
     _: true,
-    lodash: true,
-    PROJECT_PATH: true,
     _DEV_: true,
+    lodash: true,
+    CONFIG_PATH: true,
+    PROJECT_PATH: true,
   },
   plugins: [
     'react',

@@ -28,8 +28,14 @@ const providePlugin = new ProvidePlugin({
 
 // 全局常量定义
 const definePlugin = new DefinePlugin({
+  // 是否是开发环境
   _DEV_: process.env.NODE_ENV === 'development',
-  PROJECT_PATH: JSON.stringify(process.env.PROJECT_PATH),
+  // 项目目录
+  PROJECT_PATH: JSON.stringify(process.env.PWD),
+  // 配置文件路径
+  CONFIG_PATH: JSON.stringify(
+    path.join(process.env.PWD, process.env.CONFIG_PATH || './config.js')
+  ),
 });
 
 const cssRegex = /\.(css|scss)$/;

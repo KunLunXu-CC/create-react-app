@@ -2,9 +2,9 @@
 export default () => {
   let config = {};
   try {
-    config = require(`${PROJECT_PATH}/config`).default || {};
+    config = require(CONFIG_PATH).default || {};
   } catch (err) {
-    console.log('加载配置文件错误:', err);
+    console.log(`加载配置文件(${CONFIG_PATH})错误:`, err);
   }
   return config;
 };

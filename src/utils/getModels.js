@@ -24,7 +24,7 @@ export default () => {
       restFiles(key).default,
     ], []);
   } catch (e) {
-    console.log(`读取不到目录: ${PROJECT_PATH}/src`);
+    console.log(`读取模型(${PROJECT_PATH}/src)错误`, e);
   }
   return [... publicModels, ... restModels];
 };

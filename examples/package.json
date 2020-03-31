@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NPM_DEV=true react-script start",
-    "build": "cross-env NPM_DEV=true react-script build",
+    "start": "react-script start",
+    "build": "react-script build",
     "link:qy": "npm link qy-create-react"
   },
   "author": "",
