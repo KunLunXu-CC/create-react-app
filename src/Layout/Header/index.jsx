@@ -26,7 +26,7 @@ export default () => {
         {state.collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
       </div>
       <div className={scss['header-body']}>
-    1
+
       </div>
     </div>
   );

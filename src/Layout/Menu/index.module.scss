@@ -23,6 +23,7 @@
         font-weight: 500;
         color: #1890ff;
         padding-left: 12px;
+        transition: opacity 0.5s;
       }
     }
   }
@@ -36,9 +37,14 @@
   }
 }
 
+// 收缩起来时样式覆盖
 .menu-collapsed {
   .menu-logo {
     width: 64px;
     overflow: hidden;
+
+    h1 {
+      opacity: 0;
+    }
   }
 }

@@ -1,18 +1,33 @@
 import React, {
   useMemo,
+  Fragment,
   useEffect,
 } from 'react';
 import utils from '../../utils';
 import classNames from 'classnames';
 import scss from './index.module.scss';
+import * as Icons from '@ant-design/icons';
 import logo from '../../../public/logo.png';
 
 import { Menu } from 'antd';
+import { IconFont } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation, matchPath } from 'react-router-dom';
 
 // 读取配置文件
 const config = utils.getConfig();
+
+// 获取图标
+const getIcon = ({ icon, isIconFont }) => {
+  if (!icon) {
+    return '';
+  }
+  if (!isIconFont) {
+    const Icon = Icons[icon];
+    return <Icon/>;
+  }
+  return <IconFont type={icon}/>;
+};
 
 const useStateHook = () => {
   const dispatch = useDispatch();
@@ -28,15 +43,22 @@ const useStateHook = () => {
   // 菜单 children
   const menuCholdren = useMemo(() => {
     const loop = list => list.map(ele => {
+      const icon = getIcon(ele);
+      const title = (
+        <Fragment>
+          {icon}
+          <span>{ele.title}</span>
+        </Fragment>
+      );
       if (_.isArray(ele.children) && ele.children.length > 0) {
         const SubMenu = ele.idGroup ? Menu.ItemGroup : Menu.SubMenu;
         return (
-          <SubMenu key={ele.key} title={ele.title}>
+          <SubMenu key={ele.key} title={title}>
             {loop(ele.children)}
           </SubMenu>
         );
       }
-      return (<Menu.Item key={ele.key}>{ele.title}</Menu.Item>);
+      return (<Menu.Item key={ele.key}>{title}</Menu.Item>);
     });
     return loop(_.get(config, 'menu') || []);
   }, []);
@@ -107,8 +129,8 @@ export default () => {
     )}>
       <div className={scss['menu-logo']}>
         <div className={scss['menu-logo-body']}>
-          <img src={logo} alt="logo"/>
-          <h1>脚手架</h1>
+          <img src={config.logo || logo} alt="logo"/>
+          <h1>{config.logoTitle}</h1>
         </div>
       </div>
       <Menu
