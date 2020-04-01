@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import utils from '../../utils';
 import scss from './index.module.scss';
 import NotFound from '../../containers/NotFound';
@@ -13,12 +14,15 @@ const router = utils.getRoots(_.get(config, 'menu') || []).reduce(
 );
 
 export default () => (
-  <div className={scss.body}>
-    <Switch>
-      {router.map((v, index) => (
-        <Route key ={index} {... v}/>
-      ))}
-      <Route component={NotFound} />
-    </Switch>
+  <div className={scss.main}>
+    <div className={scss['main-page']}>
+      <Switch>
+        {router.map((v, index) => (
+          <Route key ={index} {... v}/>
+        ))}
+        <Route component={NotFound} />
+      </Switch>
+    </div>
+    <Footer/>
   </div>
 );

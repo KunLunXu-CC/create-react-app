@@ -46,7 +46,15 @@ export default {
             {
               exact: true,
               path: '/dashboard/analysis',
-              component: () => ('analysis'),
+              component: () => (
+                <div>
+                  分析页
+                  {new Array(100)
+                    .fill(1)
+                    .map((v, index) => <br key={index}/>)
+                  }
+                </div>
+              ),
             },
           ],
         },

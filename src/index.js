@@ -4,10 +4,11 @@ import Store from './model';
 import Layout from './Layout';
 import reactDom from 'react-dom';
 import zhCN from 'antd/es/locale/zh_CN';
-import 'moment/locale/zh-cn';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
+import 'moment/locale/zh-cn';
+import './assets/style';
 moment.locale('zh-cn');
 
 const App = () => (

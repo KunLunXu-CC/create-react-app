@@ -1,17 +1,15 @@
 import React from 'react';
 import Menu from './Menu';
-import Body from './Body';
+import Main from './Main';
 import Header from './Header';
-import Footer from './Footer';
 import scss from './index.module.scss';
 
 export default () => (
   <div className={scss.layout}>
     <Menu/>
-    <div className={scss['layout-main']}>
+    <div className={scss['layout-body']}>
       <Header/>
-      <Body/>
-      <Footer/>
+      <Main/>
     </div>
   </div>
 );
