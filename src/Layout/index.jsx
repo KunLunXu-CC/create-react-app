@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from './Menu';
 import Body from './Body';
 import Header from './Header';
+import Footer from './Footer';
 import scss from './index.module.scss';
 
 export default () => (
@@ -10,8 +11,7 @@ export default () => (
     <div className={scss['layout-main']}>
       <Header/>
       <Body/>
-      <div className={scss['layout-footer']}>
-      </div>
+      <Footer/>
     </div>
   </div>
 );

@@ -81,4 +81,7 @@ export default {
       ],
     },
   ],
+
+  // 底部: Component
+  footer: () => (<div>footer</div>),
 };
