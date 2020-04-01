@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "qy-create-react": "^1.0.6"
+    "qy-create-react": "^1.0.7"
   },
   "devDependencies": {
     "cross-env": "^7.0.2"
