@@ -1,8 +1,12 @@
 import React from 'react';
+import utils from '../../utils';
 import scss from './index.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+
+// 读取配置文件
+const config = utils.getConfig();
 
 const useStateHook = () => {
   const dispatch = useDispatch();
@@ -26,7 +30,7 @@ export default () => {
         {state.collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
       </div>
       <div className={scss['header-body']}>
-
+        {(config.tools || []).map((Tool, index) => <Tool key={index}/>)}
       </div>
     </div>
   );

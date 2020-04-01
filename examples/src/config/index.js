@@ -1,17 +1,26 @@
 import React, {
   Fragment,
 } from 'react';
-import logo from '../img/KDpgvguMpGfqaHPjicRK.svg';
+import logo from '../assets/img/KDpgvguMpGfqaHPjicRK.svg';
 import { AndroidOutlined } from '@ant-design/icons';
 
 export default {
-  // logo 配置: 图片、标题
+  // logo 配置: 图片、标题: title = reactElement
   logo: {
     img: logo,
     title: <span>测试标题</span>,
   },
 
-  menu: [   // 菜单配置
+  // header 右侧 工具栏: Component
+  tools: [
+    () => (<AndroidOutlined/>),
+    () => (<AndroidOutlined/>),
+    () => (<AndroidOutlined/>),
+    () => (<AndroidOutlined/>),
+  ],
+
+  // 菜单配置: title = reactElement
+  menu: [
     {
       idGroup: void 0,
       key: 'dashboard',
