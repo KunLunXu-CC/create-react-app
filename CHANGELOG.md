@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/qianyin925/qy-create-react/compare/v1.0.7...v1.0.8) (2020-04-01)
+
+
+### Features
+
+* 【Footer】页面底部可配置 ([bb255b6](https://github.com/qianyin925/qy-create-react/commit/bb255b6b59e539f7eb2ab8c7da680df2f975eb6e))
+* 【Header】工具栏配置功能实现 ([53bd2e9](https://github.com/qianyin925/qy-create-react/commit/53bd2e9f730d372623d7ec7a7d85e43c8216fa2f))
+* 【菜单】当右侧菜单太长时, 菜单固定在左侧不要跟随页面滚动 ([541cc72](https://github.com/qianyin925/qy-create-react/commit/541cc724163570c4b3ea57c8253883cd87964afb))
+* 【路由添加】添加 404 页面跳转逻辑 ([ac9faa1](https://github.com/qianyin925/qy-create-react/commit/ac9faa184096b87ab9d0cfd3b9347ac067756949))
+* logo 配置调整 ([81fe3a3](https://github.com/qianyin925/qy-create-react/commit/81fe3a38f10c3a10b4e2d4d134744680206806e9))
+* menu 配置模式修改 ([6363fc1](https://github.com/qianyin925/qy-create-react/commit/6363fc1dd93321409eadb114620c3c6da08f4266))
+* 菜单配置示例: 添加图标 ([29224e2](https://github.com/qianyin925/qy-create-react/commit/29224e2fe24b90744aedbf3bc1a93efbfafb7217))
+* 项目依赖包调整 ([b6d4eaf](https://github.com/qianyin925/qy-create-react/commit/b6d4eaffc4b7bb83551cf6074d254ebc409c90cd))
+
 ### [1.0.7](https://github.com/qianyin925/qy-create-react/compare/v1.0.6...v1.0.7) (2020-04-01)
 
 
