@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {
+  Fragment,
+} from 'react';
 import logo from '../img/KDpgvguMpGfqaHPjicRK.svg';
+import { AndroidOutlined } from '@ant-design/icons';
 
 export default {
   logo,                             // 自定义 logo
@@ -9,12 +12,22 @@ export default {
     {
       idGroup: void 0,
       key: 'dashboard',
-      title: 'Dashboard',
+      title: (
+        <Fragment>
+          <AndroidOutlined />
+          <span>Dashboard</span>
+        </Fragment>
+      ),
       children: [
         {
           url: '/dashboard/analysis',
           children: [],
-          title: '分析页',
+          title: (
+            <Fragment>
+              <AndroidOutlined />
+              <span>分析页</span>
+            </Fragment>
+          ),
           idGroup: void 0,
           key: 'dashboard-1',
           router: [
