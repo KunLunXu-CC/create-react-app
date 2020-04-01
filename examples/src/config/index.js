@@ -4,15 +4,12 @@ import logo from '../img/KDpgvguMpGfqaHPjicRK.svg';
 export default {
   logo,                             // 自定义 logo
   logoTitle: <span>测试标题</span>,  // logo 旁边的标题: ReactElement
-  iconFont: '//at.alicdn.com/t/font_1141137_lyeqynh5bq.js', // iconfont.cn 图标地址
 
   menu: [   // 菜单配置
     {
       idGroup: void 0,
       key: 'dashboard',
-      isIconFont: false,
       title: 'Dashboard',
-      icon: 'StarOutlined',
       children: [
         {
           url: '/dashboard/analysis',
@@ -20,8 +17,6 @@ export default {
           title: '分析页',
           idGroup: void 0,
           key: 'dashboard-1',
-          icon: 'icon-dingdanjine',
-          isIconFont: true,
           router: [
             {
               exact: true,

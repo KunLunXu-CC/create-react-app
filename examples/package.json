@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cross-env CONFIG_PATH=./src/config react-script start",
-    "build": "react-script build",
-    "link:qy": "npm link qy-create-react"
+    "build": "react-script build"
   },
   "author": "",
   "license": "ISC",
