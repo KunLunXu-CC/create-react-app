@@ -5,8 +5,11 @@ import logo from '../img/KDpgvguMpGfqaHPjicRK.svg';
 import { AndroidOutlined } from '@ant-design/icons';
 
 export default {
-  logo,                             // 自定义 logo
-  logoTitle: <span>测试标题</span>,  // logo 旁边的标题: ReactElement
+  // logo 配置: 图片、标题
+  logo: {
+    img: logo,
+    title: <span>测试标题</span>,
+  },
 
   menu: [   // 菜单配置
     {
