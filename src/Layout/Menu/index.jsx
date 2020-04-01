@@ -14,6 +14,8 @@ import { IconFont } from '../../components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation, matchPath } from 'react-router-dom';
 
+import setting from './setting';
+
 // 读取配置文件
 const config = utils.getConfig();
 
@@ -47,7 +49,7 @@ const useStateHook = () => {
       const title = (
         <Fragment>
           {icon}
-          <span>{ele.title}</span>
+          <span>{ele.title}{setting.tool}</span>
         </Fragment>
       );
       if (_.isArray(ele.children) && ele.children.length > 0) {
