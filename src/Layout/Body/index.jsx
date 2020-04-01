@@ -1,7 +1,7 @@
 import React from 'react';
 import utils from '../../utils';
 import scss from './index.module.scss';
-
+import NotFound from '../../containers/NotFound';
 import { Switch, Route } from 'react-router-dom';
 
 // 读取配置文件
@@ -18,6 +18,7 @@ export default () => (
       {router.map((v, index) => (
         <Route key ={index} {... v}/>
       ))}
+      <Route component={NotFound} />
     </Switch>
   </div>
 );
