@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/qianyin925/qy-create-react/compare/v1.1.0...v1.1.1) (2020-04-02)
+
+
+### Features
+
+* 安装插件 @babel/plugin-proposal-class-properties ([e0049cb](https://github.com/qianyin925/qy-create-react/commit/e0049cb7d05594a2d6a7178fa51e3ebbb0a857dd))
+
 ## [1.1.0](https://github.com/qianyin925/qy-create-react/compare/v1.0.8...v1.1.0) (2020-04-02)
 
 ### [1.0.8](https://github.com/qianyin925/qy-create-react/compare/v1.0.7...v1.0.8) (2020-04-01)
