@@ -33,10 +33,16 @@ npm i cross-env -D
 
 
 ```js
+import React, {
+  Fragment,
+} from 'react';
+import { AndroidOutlined } from '@ant-design/icons';
+import logo from '../assets/img/logo.png';
+
 export default {
   // 1. logo 配置
   logo: {
-    img: require('**/**/*.png'),    // 指定 logo 图片
+    img: logo,                        // 指定 logo, 可选
     title: <span>logo 标题</span>,   // 指定 logo 标题, 可以任何 ReactElement
   },
 
@@ -79,7 +85,7 @@ export default {
           router: [
             {
               exact: true,
-              component: Analysis,
+              component: () => ('Analysis'),
               path: '/dashboard/analysis',
             },
           ],
