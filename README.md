@@ -2,7 +2,7 @@
 
 基于 React 和 Antd　的一套中后台集成框架
 
-## 使用方法
+## 基本使用方法
 
 ### 一、 安装依赖
 
@@ -16,10 +16,10 @@ npm i cross-env -D
 1. 使用 cross-env 定义环境变量 CONFIG_PATH
 2. CONFIG_PATH 则定义了配置文件的位置
 
-```json
+```diff
 "scripts": {
-  "start": "cross-env CONFIG_PATH=./src/config react-script start",
-  "build": "react-script build"
++ "start": "cross-env CONFIG_PATH=./src/config react-script start",
++ "build": "cross-env CONFIG_PATH=./src/config react-script build",
 },
 ```
 
