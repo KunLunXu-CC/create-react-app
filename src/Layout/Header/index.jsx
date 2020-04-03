@@ -7,6 +7,7 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 // 读取配置文件
 const config = utils.getConfig();
+const Header = _.get(config, 'header');
 
 const useStateHook = () => {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ export default () => {
         {state.collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
       </div>
       <div className={scss['header-body']}>
-        {(config.tools || []).map((Tool, index) => <Tool key={index}/>)}
+        {Header ? <Header/> : null}
       </div>
     </div>
   );

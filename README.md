@@ -33,69 +33,51 @@ npm i cross-env -D
 
 
 ```js
-import React, {
-  Fragment,
-} from 'react';
-import { AndroidOutlined } from '@ant-design/icons';
-import logo from '../assets/img/logo.png';
-
 export default {
-  // 1. logo 配置
-  logo: {
-    img: logo,                        // 指定 logo, 可选
-    title: <span>logo 标题</span>,   // 指定 logo 标题, 可以任何 ReactElement
+  logo: {             // logo 配置
+    img: void 0,      // logo 配置图片: require('*/**/*.png')
+    title: '测试标题', // 标题
   },
-
-  // header 右侧 工具栏: React 组件数组
-  tools: [
-    () => (<AndroidOutlined/>),
-    () => (<AndroidOutlined/>),
-    () => (<AndroidOutlined/>),
-    () => (<AndroidOutlined/>),
-  ],
+  footer: () => ('footer'),  // 组件
+  header: () => ('header'),  // 组件
+  iconFont: '//at.alicdn.com/t/font_1141137_lyeqynh5bq.js', // iconFont 外链
 
   // 菜单配置
   // 1. idGroup 是否分组组件将使用 antd Menu.ItemGroup 来渲染节点
   // 2. key 唯一 key 值
   // 3. title 则是菜单标题, 可以是任意 ReactElement
+  // 4. icon 则是菜单图标, 可以使用 antd@4.x 内置图标, 也可使用 iconFont 图标
   // 4. children 子级配置
   // 5. router 表示当前页面下所有路由配置列表, 每个配置项参数同 react-router Route 组件参数
   menu: [
     {
-      idGroup: void 0,
-      key: 'dashboard',
-      title: (
-        <Fragment>
-          <AndroidOutlined />
-          <span>Dashboard</span>
-        </Fragment>
-      ),
+      key: 'canvas',
+      title: 'canvas',
+      idGroup: false,
+      icon: 'icon-dingdanjine',
       children: [
         {
-          url: '/dashboard/analysis',
-          children: [],
-          title: (
-            <Fragment>
-              <AndroidOutlined />
-              <span>分析页</span>
-            </Fragment>
-          ),
-          idGroup: void 0,
-          key: 'dashboard-1',
-          router: [
+          key: 'particle',
+          title: 'particle',
+          icon: 'icon-rili',
+          children: [
             {
-              exact: true,
-              component: () => ('Analysis'),
-              path: '/dashboard/analysis',
+              key: 'particle_1',
+              title: 'particle_1',
+              icon: 'AndroidOutlined',
+              url: '/canvas/particle/1',
+              router: [
+                {
+                  path: '/canvas/particle/1',
+                  component: () => ('particle_1'),
+                },
+              ],
             },
           ],
         },
       ],
     },
   ],
-
-  // 页面底部要显示内容: React 组件
-  footer: () => (<div>footer</div>),
 };
 
 ```
