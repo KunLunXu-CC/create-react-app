@@ -24,6 +24,7 @@ export default {
               url: '/canvas/particle/1',
               router: [
                 {
+                  exact: true,
                   path: '/canvas/particle/1',
                   component: () => ('particle_1'),
                 },
