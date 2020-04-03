@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/qianyin925/qy-create-react/compare/v1.1.1...v1.1.2) (2020-04-03)
+
+
+### Features
+
+* 配置修改, 添加 icon 字段 ([a340172](https://github.com/qianyin925/qy-create-react/commit/a340172405c21811c2ad6b35fe9df0b08b15fdc2))
+
 ### [1.1.1](https://github.com/qianyin925/qy-create-react/compare/v1.1.0...v1.1.1) (2020-04-02)
 
 
