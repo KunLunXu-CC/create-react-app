@@ -2,6 +2,7 @@ const path = require('path');
 const webpackFinal = require('./webpackFinal');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const getConfigDirPath = require('../src/utils/getConfigDirPath');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const { ProvidePlugin, DefinePlugin } = require('webpack');
@@ -34,9 +35,7 @@ const definePlugin = new DefinePlugin({
   // 项目目录
   PROJECT_PATH: JSON.stringify(process.env.PWD),
   // 配置文件路径
-  CONFIG_PATH: JSON.stringify(
-    path.join(process.env.PWD, process.env.CONFIG_PATH || './config.js')
-  ),
+  CONFIG_DIR_PATH: JSON.stringify(getConfigDirPath()),
 });
 
 const cssRegex = /\.(css|scss)$/;

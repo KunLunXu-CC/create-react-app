@@ -13,7 +13,7 @@ module.exports = {
     _: true,
     _DEV_: true,
     lodash: true,
-    CONFIG_PATH: true,
+    CONFIG_DIR_PATH: true,
     PROJECT_PATH: true,
   },
   plugins: [

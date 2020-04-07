@@ -13,20 +13,20 @@ npm i cross-env -D
 
 ### 二、 修改 npm 脚本
 
-1. 使用 cross-env 定义环境变量 CONFIG_PATH
-2. CONFIG_PATH 则定义了配置文件的位置
+1. 使用 cross-env 定义环境变量 CONFIG_DIR_PATH
+2. CONFIG_DIR_PATH 则定义了配置文件的位置
 
 ```diff
 "scripts": {
-+ "start": "cross-env CONFIG_PATH=./src/config react-script start",
-+ "build": "cross-env CONFIG_PATH=./src/config react-script build",
++ "start": "cross-env CONFIG_DIR_PATH=./src/config react-script start",
++ "build": "cross-env CONFIG_DIR_PATH=./src/config react-script build",
 },
 ```
 
 ### 三、 在对应位置添加配置文件
 
 - 默认加载项目目录下 config.js 文件
-- 可通过设置环境变量 cross-env CONFIG_PATH=./src/config 来指定配置文件位置
+- 可通过设置环境变量 cross-env CONFIG_DIR_PATH=./src/config 来指定配置文件位置
 - 可以将配置文件放置在 config 目录下但是文件名必须是 index.js 如: config/index.js
 
 #### 3.1 配置文件说明

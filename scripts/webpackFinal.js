@@ -1,16 +1,13 @@
-const path = require('path');
+const getConfigDirPath = require('../src/utils/getConfigDirPath');
 
-const CONFIG_PATH = path.join(
-  process.env.PWD,
-  process.env.CONFIG_PATH || './config.js'
-);
+const CONFIG_DIR_PATH = getConfigDirPath();
 
 module.exports = config => {
   try {
-    const { webpackFinal } = require(CONFIG_PATH).default || {};
+    const webpackFinal = require(`${CONFIG_DIR_PATH}/webpackFinal`) || {};
     return webpackFinal ? webpackFinal(config) : config;
   } catch (err) {
-    console.log(`加载配置文件(${CONFIG_PATH})错误:`, err);
+    console.log(`加载配置文件(${CONFIG_DIR_PATH})错误:`, err);
   }
   return config;
 };

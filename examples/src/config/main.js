@@ -35,5 +35,4 @@ module.exports = {
       ],
     },
   ],
-  webpackFinal: void 0,
 };
