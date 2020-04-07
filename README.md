@@ -33,7 +33,7 @@ npm i cross-env -D
 
 
 ```js
-export default {
+module.exports = {
   logo: {             // logo 配置
     img: void 0,      // logo 配置图片: require('*/**/*.png')
     title: '测试标题', // 标题

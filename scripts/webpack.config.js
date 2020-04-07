@@ -1,4 +1,5 @@
 const path = require('path');
+const webpackFinal = require('./webpackFinal');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -41,7 +42,7 @@ const definePlugin = new DefinePlugin({
 const cssRegex = /\.(css|scss)$/;
 const cssModuleRegex = /\.module\.(css|scss)$/;
 
-module.exports = {
+module.exports = webpackFinal({
   mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
@@ -138,4 +139,4 @@ module.exports = {
     // 该选项配置  output.publicPath: '/' 解决: BrowserRouter 路由刷新时找不到页面 BUG
     historyApiFallback: true,
   },
-};
+});
