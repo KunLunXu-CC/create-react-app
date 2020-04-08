@@ -14,7 +14,8 @@ npm i cross-env -D
 ### 二、 修改 npm 脚本
 
 1. 使用 cross-env 定义环境变量 CONFIG_DIR_PATH
-2. CONFIG_DIR_PATH 则定义了配置文件的位置
+2. CONFIG_DIR_PATH 则定义了配置目录的路径
+3. 当然也可以不设置 CONFIG_DIR_PATH 因为默认配置目录的路径就是项目目录下 src/config
 
 ```diff
 "scripts": {
@@ -23,17 +24,16 @@ npm i cross-env -D
 },
 ```
 
-### 三、 在对应位置添加配置文件
+### 三、 在指定的配置目录下添加配置文件
 
-- 默认加载项目目录下 config.js 文件
-- 可通过设置环境变量 cross-env CONFIG_DIR_PATH=./src/config 来指定配置文件位置
-- 可以将配置文件放置在 config 目录下但是文件名必须是 index.js 如: config/index.js
+- main.js 定义页面的展示
+- webpackFinal.js 则用于自定义 webpack: config => config
 
-#### 3.1 配置文件说明
+#### 3.1 main 配置文件说明
 
 
 ```js
-module.exports = {
+export default {
   logo: {             // logo 配置
     img: void 0,      // logo 配置图片: require('*/**/*.png')
     title: '测试标题', // 标题
@@ -79,6 +79,21 @@ module.exports = {
     },
   ],
 };
+```
+
+#### 3.2 webpackFinal 配置文件说明
+
+1. 该文件导出一个方法
+2. 该方法接收一个参数为 webpack 配置(Object)
+3. 该方法返回 webpack 配置(Object)
+
+```js
+const MonacoEditor = require('monaco-editor-webpack-plugin');
+
+module.exports = config => {
+  config.plugins.push(new MonacoEditor());
+  return config;
+}
 ```
 
 ## vscode 开启 Eslint 校验
