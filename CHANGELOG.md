@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/qianyin925/qy-create-react/compare/v1.1.5...v1.1.6) (2020-04-08)
+
+
+### Features
+
+* 修改 readme、getConfig 方法 ([e2e27dc](https://github.com/qianyin925/qy-create-react/commit/e2e27dc5a136e434e374e054bfac8fda77632c17))
+
 ### [1.1.5](https://github.com/qianyin925/qy-create-react/compare/v1.1.4...v1.1.5) (2020-04-08)
 
 
