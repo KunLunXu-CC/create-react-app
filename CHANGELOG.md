@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.7](https://github.com/qianyin925/qy-create-react/compare/v1.1.6...v1.1.7) (2020-04-09)
+
+
+### Features
+
+* eslint-loader 配置修改 ([2390d54](https://github.com/qianyin925/qy-create-react/commit/2390d546569dcb89f8a8ba22fa2836fee69d8c3f))
+
 ### [1.1.6](https://github.com/qianyin925/qy-create-react/compare/v1.1.5...v1.1.6) (2020-04-08)
 
 
