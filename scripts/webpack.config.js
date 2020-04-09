@@ -63,8 +63,9 @@ module.exports = webpackFinal({
             loader: 'eslint-loader',
             options: {
               cache: true,
-              baseConfig: require('../.eslintrc'),
               eslintPath: require.resolve('eslint'),
+              configFile: path.resolve(__dirname, '../.eslintrc.js'),
+              ignorePath: path.resolve(__dirname, '../.eslintignore'),
               formatter: require('eslint-friendly-formatter'),
             },
           },
