@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.9](https://github.com/qianyin925/qy-create-react/compare/v1.1.8...v1.1.9) (2020-04-13)
+
+
+### Features
+
+* eslint 添加 ES6 环境 ([094eb5c](https://github.com/qianyin925/qy-create-react/commit/094eb5c3051f68370572dc58ec1e942fb062b3bf))
+
 ### [1.1.8](https://github.com/qianyin925/qy-create-react/compare/v1.1.7...v1.1.8) (2020-04-12)
 
 
