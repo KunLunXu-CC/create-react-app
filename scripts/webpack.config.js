@@ -83,6 +83,14 @@ module.exports = webpackFinal({
             },
           },
           { loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.resolve(__dirname, '../postcss.config.js'),
+              },
+            },
+          },
           'sass-loader',
         ],
       },
@@ -100,6 +108,14 @@ module.exports = webpackFinal({
             options: {
               modules: {
                 localIdentName: '[local]__[hash:base64]',
+              },
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.resolve(__dirname, '../postcss.config.js'),
               },
             },
           },

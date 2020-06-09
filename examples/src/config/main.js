@@ -1,3 +1,5 @@
+import Home from '../pages/Home';
+
 export default {
   logo: {             // logo 配置
     img: void 0,      // logo 配置图片: require('*/**/*.png')
@@ -7,6 +9,19 @@ export default {
   header: () => ('header'),  // 组件
   iconFont: '//at.alicdn.com/t/font_1141137_lyeqynh5bq.js', // iconFont 外链
   menu: [  // 菜单配置
+    {
+      key: 'home',
+      title: '首页',
+      icon: 'AndroidOutlined',
+      url: '/',
+      router: [
+        {
+          exact: true,
+          path: '/',
+          component: Home,
+        },
+      ],
+    },
     {
       key: 'canvas',
       title: 'canvas',
