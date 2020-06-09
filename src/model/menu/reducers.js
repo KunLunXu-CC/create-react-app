@@ -34,7 +34,8 @@ export const setOpenKeys = (state, { openKeys }) => ({
  * @param {Object} state 当前 state
  * @return {Object} 更新后的状态
  */
-export const toggleCollapsed = state => ({
-  ... state,
-  collapsed: !state.collapsed,
-});
+export const toggleCollapsed = state => {
+  const collapsed = !state.collapsed;
+  localStorage.setItem('menuCollapsed', collapsed);
+  return { ... state, collapsed };
+};
