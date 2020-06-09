@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.11](https://github.com/qianyin925/qy-create-react/compare/v1.1.10...v1.1.11) (2020-06-09)
+
+
+### Features
+
+* 【webpack】自动添加浏览器前缀 ([77327f3](https://github.com/qianyin925/qy-create-react/commit/77327f30c55d761cacfe9dcfe0d1298a5921fa90))
+* 【菜单】当最小化菜单时，刷新页面也应该保持最小化状态 ([99b7360](https://github.com/qianyin925/qy-create-react/commit/99b7360d527df734fb3bc5a1c8fe13ea71fe5b9d))
+
 ### [1.1.10](https://github.com/qianyin925/qy-create-react/compare/v1.1.9...v1.1.10) (2020-04-21)
 
 ### [1.1.9](https://github.com/qianyin925/qy-create-react/compare/v1.1.8...v1.1.9) (2020-04-13)
