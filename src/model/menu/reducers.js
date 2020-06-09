@@ -36,6 +36,6 @@ export const setOpenKeys = (state, { openKeys }) => ({
  */
 export const toggleCollapsed = state => {
   const collapsed = !state.collapsed;
-  localStorage.setItem('menuCollapsed', collapsed);
+  localStorage.setItem('menu', JSON.stringify({ collapsed }));
   return { ... state, collapsed };
 };

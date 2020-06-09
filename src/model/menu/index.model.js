@@ -4,7 +4,9 @@ import * as reducers from './reducers';
 const initState = {
   openKeys: [],
   selectedKeys: [],
-  collapsed: localStorage.getItem('menuCollapsed'),
+  collapsed: JSON.parse(
+    localStorage.getItem('menu') ?? '{"collapsed": false}'
+  ).collapsed,
 };
 
 export default {
