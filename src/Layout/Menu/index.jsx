@@ -130,13 +130,15 @@ export default () => {
           {_.get(config, 'logo.title')}
         </div>
       </div>
-      <Menu
-        mode="inline"
-        onSelect={state.onSelectMenu}
-        onOpenChange={state.onOpenChange}
-        {... state.menuControlledProps}>
-        {state.menuCholdren}
-      </Menu>
+      <div className={scss['menu-body']}>
+        <Menu
+          mode="inline"
+          onSelect={state.onSelectMenu}
+          onOpenChange={state.onOpenChange}
+          {... state.menuControlledProps}>
+          {state.menuCholdren}
+        </Menu>
+      </div>
     </div>
   );
 };

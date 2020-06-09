@@ -30,6 +30,19 @@ export default {
                 },
               ],
             },
+            ... Array.from({ length: 20 }).map((v, index) => ({
+              key: `particle_1_${index}`,
+              title: `particle_1_${index}`,
+              icon: 'AndroidOutlined',
+              url: '/canvas/particle/1',
+              router: [
+                {
+                  exact: true,
+                  path: '/canvas/particle/1',
+                  component: () => (`particle_1_${index}`),
+                },
+              ],
+            })),
           ],
         },
       ],

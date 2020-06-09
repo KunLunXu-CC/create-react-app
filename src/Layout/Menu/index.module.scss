@@ -1,5 +1,21 @@
 .menu {
+  display: flex;
+  flex-direction: column;
   border-right: 1px solid rgba(29,35,41,.05);
+
+  // 滚动条设置
+  ::-webkit-scrollbar-track {
+    border-radius: 0px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background-color: rgba($color: #999, $alpha: 0.4);
+  }
 
   &-logo {
     height: 64px;
@@ -30,6 +46,12 @@
       display: flex;
       align-items: center;
     }
+  }
+
+  &-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   :global {
