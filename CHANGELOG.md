@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.13](https://github.com/qianyin925/qy-create-react/compare/v1.1.12...v1.1.13) (2020-08-18)
+
+
+### Features
+
+* 删除 node-scss 包改为 sass ([cb83f74](https://github.com/qianyin925/qy-create-react/commit/cb83f7459ba70c1c87800e52fb1607bf3550d42a))
+
 ### [1.1.12](https://github.com/qianyin925/qy-create-react/compare/v1.1.11...v1.1.12) (2020-06-09)
 
 ### [1.1.11](https://github.com/qianyin925/qy-create-react/compare/v1.1.10...v1.1.11) (2020-06-09)
