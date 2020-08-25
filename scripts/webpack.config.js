@@ -43,6 +43,7 @@ const cssModuleRegex = /\.module\.(css|scss)$/;
 
 module.exports = webpackFinal({
   mode: process.env.NODE_ENV,
+  devtool: 'inline-source-map', // 移除控制台的部分警告
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     publicPath: '/',
