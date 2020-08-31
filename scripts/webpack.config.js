@@ -47,7 +47,7 @@ module.exports = webpackFinal({
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     publicPath: '/',
-    path: path.resolve(__dirname, '../build'),
+    path: path.resolve(process.env.PWD, './build'),
     filename: 'js/[name].[hash].bundle.js',
   },
   module: {
