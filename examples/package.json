@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "./examples",
   "scripts": {
     "link:react-script": "npm link ../",
     "start": "cross-env CONFIG_DIR_PATH=./src/config react-script start",

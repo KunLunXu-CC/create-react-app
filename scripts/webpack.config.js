@@ -2,8 +2,9 @@ const path = require('path');
 const webpackFinal = require('./webpackFinal');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const getConfigDirPath = require('../src/utils/getConfigDirPath');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const getConfigDirPath = require('../src/utils/getConfigDirPath');
+const appPackageJson = require(path.resolve(process.env.PWD, './package.json'));
 
 const { ProvidePlugin, DefinePlugin } = require('webpack');
 
@@ -46,7 +47,8 @@ module.exports = webpackFinal({
   devtool: 'inline-source-map', // 移除控制台的部分警告
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
-    publicPath: '/',
+    // 公共资源路径: 取 package.homepage || /, 这将决定打包后静态资源的加载路径
+    publicPath: appPackageJson.homepage || '/',
     path: path.resolve(process.env.PWD, './build'),
     filename: 'js/[name].[hash].bundle.js',
   },
