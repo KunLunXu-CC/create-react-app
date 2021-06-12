@@ -1,3 +1,1 @@
-module.exports = config => {
-  return config;
-};
+module.exports = config => config;
