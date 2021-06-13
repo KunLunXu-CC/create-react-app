@@ -1,5 +1,6 @@
 const path = require('path');
 const webpackFinal = require('./webpackFinal');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -19,10 +20,22 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
   chunkFilename: 'style/[id].[hash].css',
 });
 
-// 拷贝 public 内文件
-const copyWebpackPlugin = new CopyWebpackPlugin(
-  [{ from: path.resolve(__dirname, '../public') }]
-);
+// 拷贝 public 内除 index.html 的所以文件
+const copyWebpackPlugin = new CopyWebpackPlugin({
+  patterns: [{
+    from: path.resolve(__dirname, '../public'),
+    globOptions: { ignore: ['**/index.html'] },
+  }],
+});
+
+// Eslint
+const eslintPlugin = new ESLintPlugin({
+  cache: true,
+  eslintPath: require.resolve('eslint'),
+  formatter: require('eslint-friendly-formatter'),
+  ignorePath: path.resolve(__dirname, '../.eslintignore'),
+  overrideConfigFile: path.resolve(__dirname, '../.eslintrc.js'),
+});
 
 // 自动加载
 const providePlugin = new ProvidePlugin({
@@ -62,16 +75,6 @@ module.exports = webpackFinal({
             loader: 'babel-loader',
             options: require('../.babelrc'),
           },
-          {
-            loader: 'eslint-loader',
-            options: {
-              cache: true,
-              eslintPath: require.resolve('eslint'),
-              configFile: path.resolve(__dirname, '../.eslintrc.js'),
-              ignorePath: path.resolve(__dirname, '../.eslintignore'),
-              formatter: require('eslint-friendly-formatter'),
-            },
-          },
         ],
       },
       {
@@ -79,18 +82,13 @@ module.exports = webpackFinal({
         exclude: cssModuleRegex,
         sideEffects: true,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
+          { loader: MiniCssExtractPlugin.loader },
           { loader: 'css-loader', options: { importLoaders: 1 } },
           {
             loader: 'postcss-loader',
             options: {
-              config: {
-                path: path.resolve(__dirname, '../postcss.config.js'),
+              postcssOptions: {
+                config: path.resolve(__dirname, '../postcss.config.js'),
               },
             },
           },
@@ -100,12 +98,7 @@ module.exports = webpackFinal({
       {
         test: cssModuleRegex,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: process.env.NODE_ENV === 'development',
-            },
-          },
+          { loader: MiniCssExtractPlugin.loader },
           {
             loader: 'css-loader',
             options: {
@@ -117,8 +110,8 @@ module.exports = webpackFinal({
           {
             loader: 'postcss-loader',
             options: {
-              config: {
-                path: path.resolve(__dirname, '../postcss.config.js'),
+              postcssOptions: {
+                config: path.resolve(__dirname, '../postcss.config.js'),
               },
             },
           },
@@ -143,6 +136,7 @@ module.exports = webpackFinal({
   },
 
   plugins: [
+    eslintPlugin,
     definePlugin,
     providePlugin,
     htmlWebpackPlugin,
@@ -152,10 +146,16 @@ module.exports = webpackFinal({
 
   resolve: {
     extensions: ['.mjs', '.js', '.jsx'],
+
+    fallback: {
+      path: require.resolve('path-browserify'),
+    },
   },
 
   devServer: {
     // 该选项配置  output.publicPath: '/' 解决: BrowserRouter 路由刷新时找不到页面 BUG
     historyApiFallback: true,
+
+    hot: true,
   },
 });
