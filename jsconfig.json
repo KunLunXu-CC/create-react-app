@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@qy/*": ["/*"],
+      "@qy-utils/*": ["src/utils/*"],
+      "@qy-containers/*": ["src/containers/*"],
+      "@qy-components/*": ["src/components/*"],
+    },
+  }
+}

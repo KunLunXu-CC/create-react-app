@@ -1,8 +1,7 @@
 import React from 'react';
-import utils from '../../../utils';
+import qyrc from '@qy/.qyrc.js';
 
-// 读取配置文件
-const { footer: Footer } = utils.getConfig();
+const Footer = qyrc?.footer;
 
 export default () => (
   Footer ? <Footer/> : null

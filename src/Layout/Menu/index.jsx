@@ -3,19 +3,19 @@ import React, {
   useEffect,
   Fragment,
 } from 'react';
-import utils from '../../utils';
+import utils from '@qy-utils';
 import classNames from 'classnames';
+import qyrc from '@qy/.qyrc.js';
 import scss from './index.module.scss';
 import logo from '../../../public/logo.png';
+import * as AntdIcon from '@ant-design/icons';
 
 import { Menu } from 'antd';
-import * as AntdIcon from '@ant-design/icons';
-import { OutsideInconFont } from '../../components';
+import { OutsideInconFont } from '@qy-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation, matchPath } from 'react-router-dom';
 
-// 读取配置文件
-const config = utils.getConfig();
+console.log('%c [ qyrc ]', 'font-size:13px; background:pink; color:#bf2c9f;', qyrc);
 
 // 渲染图标
 const renderIcon = data => {
@@ -57,12 +57,12 @@ const useStateHook = () => {
       }
       return (<Menu.Item key={ele.key}>{title}</Menu.Item>);
     });
-    return loop(_.get(config, 'menu') || []);
+    return loop(qyrc.menu ?? []);
   }, []);
 
   // 选择菜单
   const onSelectMenu = ({ key }) => {
-    const item = utils.getRoots(_.get(config, 'menu') || []).find(
+    const item = utils.getRoots(qyrc.menu ?? []).find(
       ele => ele.key === key
     );
     history.push(item.url || '404');
@@ -87,7 +87,7 @@ const useStateHook = () => {
   }), [collapsed, selectedKeys, openKeys]);
 
   useEffect(() => {
-    const menuList = _.get(config, 'menu') || [];
+    const menuList = qyrc.menu ?? [];
     const findMenu = utils.getRoots(menuList).find(
       ele => (ele.router || []).find(v => (
         matchPath(location.pathname, v)
@@ -125,9 +125,9 @@ export default () => {
       { [scss['menu-collapsed']]: state.collapsed }
     )}>
       <div className={scss['menu-logo']}>
-        <img src={_.get(config, 'logo.img') || logo} alt="logo"/>
+        <img src={qyrc.logo?.img ?? logo} alt="logo"/>
         <div className={scss['menu-logo-title']}>
-          {_.get(config, 'logo.title')}
+          {qyrc.logo?.title}
         </div>
       </div>
       <div className={scss['menu-body']}>

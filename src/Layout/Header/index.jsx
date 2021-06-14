@@ -1,13 +1,11 @@
 import React from 'react';
-import utils from '../../utils';
+import qyrc from '@qy/.qyrc.js';
 import scss from './index.module.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
-// 读取配置文件
-const config = utils.getConfig();
-const Header = _.get(config, 'header');
+const Header = qyrc?.header;
 
 const useStateHook = () => {
   const dispatch = useDispatch();

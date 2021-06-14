@@ -150,6 +150,13 @@ module.exports = webpackFinal({
     fallback: {
       path: require.resolve('path-browserify'),
     },
+
+    alias: {
+      '@qy': path.resolve(__dirname, '..'),
+      '@qy-utils': path.resolve(__dirname, '../src/utils'),
+      '@qy-containers': path.resolve(__dirname, '../src/containers'),
+      '@qy-components': path.resolve(__dirname, '../src/components'),
+    },
   },
 
   devServer: {

@@ -1,7 +1,7 @@
 import React from 'react';
 import scss from './index.module.scss';
 
-import { InsideIconFont } from '../../components';
+import { InsideIconFont } from '@qy-components';
 
 export default () => (
   <div className={scss['not-found']}>
