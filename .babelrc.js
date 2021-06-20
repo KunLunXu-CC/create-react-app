@@ -12,8 +12,6 @@ module.exports = {
     ['@babel/plugin-proposal-class-properties'],
     // asyn await 支持
     '@babel/plugin-transform-async-to-generator',
-    // Webpack4 动态导入文件
-    '@babel/plugin-syntax-dynamic-import',
   ],
   'presets': [
     '@babel/preset-react',

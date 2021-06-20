@@ -1,6 +1,6 @@
-const Home = require('./src/pages/Home');
+import Home from './src/pages/Home';
 
-module.exports = {
+export default {
   name: 2222,
   webpackFinal: config => config,
   logo: {             // logo 配置

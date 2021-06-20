@@ -5,7 +5,6 @@
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-
 'use strict';
 const path = require('path');
 // Makes the script crash on unhandled rejections instead of silently
@@ -23,6 +22,7 @@ const scriptIndex = args.findIndex(
 
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 
+// 判断脚本是否存在, 存在则执行对应的脚本
 if (['start', 'build'].includes(script)) {
   // 设置环境变量
   const env = { ... process.env };

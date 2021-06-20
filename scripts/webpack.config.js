@@ -4,7 +4,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const getConfigDirPath = require('../src/utils/getConfigDirPath');
 const appPackageJson = require(path.resolve(process.env.PWD, './package.json'));
 
 const { ProvidePlugin, DefinePlugin } = require('webpack');
@@ -48,8 +47,6 @@ const definePlugin = new DefinePlugin({
   _DEV_: process.env.NODE_ENV === 'development',
   // 项目目录
   PROJECT_PATH: JSON.stringify(process.env.PWD),
-  // 配置文件路径
-  CONFIG_DIR_PATH: JSON.stringify(getConfigDirPath()),
 });
 
 const cssRegex = /\.(css|scss)$/;

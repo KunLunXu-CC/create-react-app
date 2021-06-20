@@ -1,4 +1,4 @@
-const lodash = require('lodash');
-const qyrc = require(`${PROJECT_PATH}/.qyrc.js`);
+import lodash from 'lodash';
+import qyrc from '/.qyrc.js'; // 获取根目录的 .qyrc.js 文件(并不是指当前项目)
 
-module.exports = lodash.merge({}, qyrc);
+export default lodash.merge({}, qyrc);
