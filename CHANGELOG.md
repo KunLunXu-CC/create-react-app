@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.20](https://github.com/qianyin925/qy-create-react/compare/v1.1.19...v1.1.20) (2021-06-20)
+
+
+### Features
+
+* 🎸 版本升级 ([bf575ce](https://github.com/qianyin925/qy-create-react/commit/bf575ce2d8c1ee533a8b5ed13cec031df468c8aa))
+* 🎸 架构调整: qyrc 配置实现 ([5047ca3](https://github.com/qianyin925/qy-create-react/commit/5047ca3fe165925aa0364aedf375e4633e40233a))
+* 🎸 整体架构调整 ([033ad19](https://github.com/qianyin925/qy-create-react/commit/033ad1910b90265ae856ea93fad52d8563ec992c))
+* examples 调整 ([524b66c](https://github.com/qianyin925/qy-create-react/commit/524b66ccade7d9ee8d3ec2918e1042b456f943e9))
+
 ### [1.1.19](https://github.com/qianyin925/qy-create-react/compare/v1.1.18...v1.1.19) (2020-10-25)
 
 ### [1.1.18](https://github.com/qianyin925/qy-create-react/compare/v1.1.17...v1.1.18) (2020-09-03)
