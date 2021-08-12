@@ -5,11 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/react-script start",
-    "commit": "git-cz",
-    "release": "standard-version --release-as",
-    "release:100": "npm run release -- major",
-    "release:010": "npm run release -- minor",
-    "release:001": "npm run release -- patch"
+    "cz": "git add . && qy-cz",
+    "release": "qy-release",
+    "prepare": "husky install"
   },
   "bin": {
     "react-script": "bin/react-script.js"
@@ -19,30 +17,23 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.14.5",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-proposal-decorators": "^7.14.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/plugin-transform-async-to-generator": "^7.14.5",
-    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "antd": "^4.16.2",
     "autoprefixer": "^10.2.6",
-    "babel-eslint": "^10.1.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "chalk": "^4.1.1",
     "copy-webpack-plugin": "^9.0.0",
     "css-loader": "^5.2.6",
-    "eslint": "^7.28.0",
+    "eslint": "^7.30.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^3.0.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-webpack-plugin": "^2.5.4",
+    "eslint-webpack-plugin": "^3.0.1",
     "file-loader": "^6.2.0",
-    "git-cz": "^4.7.6",
     "html-webpack-plugin": "^5.3.1",
     "lodash": "^4.17.21",
     "mini-css-extract-plugin": "^1.6.0",
@@ -65,21 +56,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-angular": "^12.1.4",
-    "commitizen": "^4.2.4",
-    "cz-conventional-changelog": "^3.3.0",
-    "husky": "^6.0.0",
-    "standard-version": "^9.3.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+    "qy-norm": "^1.0.12"
   }
 }
