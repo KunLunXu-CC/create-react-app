@@ -2,7 +2,6 @@ import Home from './src/pages/Home';
 
 export default {
   name: 2222,
-  webpackFinal: config => config,
   logo: {             // logo 配置
     img: void 0,      // logo 配置图片: require('*/**/*.png')
     title: '测试标题', // 标题
