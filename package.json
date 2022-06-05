@@ -1,6 +1,6 @@
 {
   "name": "qy-create-react",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -39,6 +39,7 @@
     "mini-css-extract-plugin": "^1.6.0",
     "path-browserify": "^1.0.1",
     "postcss-loader": "^6.1.0",
+    "qy-norm": "^2.4.0",
     "raw-loader": "^4.0.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -54,8 +55,5 @@
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
-  },
-  "devDependencies": {
-    "qy-norm": "^2.4.0"
   }
 }
