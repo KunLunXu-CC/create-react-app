@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/qianyin925/qy-create-react/compare/v1.1.20...v1.2.0) (2022-06-05)
+
 ### [1.1.20](https://github.com/qianyin925/qy-create-react/compare/v1.1.19...v1.1.20) (2021-06-20)
 
 
