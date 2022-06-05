@@ -98,14 +98,26 @@ module.exports = config => {
 }
 ```
 
-## vscode 开启 Eslint 校验
+## .eslintrc.js 配置文件
 
 创建文件 `.vscode/settings.json`
 
+```js
+const path = require("path");
+
+module.exports = {
+  extends: [path.resolve(__dirname, "./node_modules/qy-norm/.eslintrc.js")],
+};
+```
+
+## vscode eslint 格式化配置
+
 ```json
 {
-  "eslint.options": {
-    "configFile": "./node_modules/qy-create-react/.eslintrc.js"
+  // -----------统一配置--------------
+  "editor.codeActionsOnSave": { // 代码自动格式配置
+    "source.fixAll.eslint": true, // 根据 eslint 配置进行格式化, 需要安装 eslint 插件
+    "source.fixAll.stylelint": true // 根据 eslint 配置进行格式化, 需要安装 stylelint 插件
   }
 }
 ```

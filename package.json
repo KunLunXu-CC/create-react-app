@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/react-script start",
-    "cz": "git add . && qy-cz",
+    "cz": "qy-cz",
     "release": "qy-release",
     "prepare": "husky install"
   },
@@ -40,8 +40,8 @@
     "path-browserify": "^1.0.1",
     "postcss-loader": "^6.1.0",
     "raw-loader": "^4.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "redux": "^4.1.0",
@@ -56,6 +56,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
-    "qy-norm": "^1.0.12"
+    "qy-norm": "^2.4.0"
   }
 }
