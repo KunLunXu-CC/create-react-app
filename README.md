@@ -98,19 +98,34 @@ module.exports = config => {
 }
 ```
 
-## .eslintrc.js 配置文件
+## 初始化: norm
 
-创建文件 `.vscode/settings.json`
+1. 执行 `npx klx-norm` 并选择要配置内容
+
+## .eslintrc.js 配置文件
 
 ```js
 const path = require("path");
 
 module.exports = {
-  extends: [path.resolve(__dirname, "./node_modules/@kunlunxu/norm/.eslintrc.js")],
+  extends: [path.resolve(__dirname, './node_modules/@kunlunxu/create-react-app/.eslintrc.js')],
 };
 ```
 
+## .stylelintrc.js 配置文件
+
+```js
+const path = require("path");
+
+module.exports = {
+  extends: [path.resolve(__dirname, './node_modules/@kunlunxu/create-react-app/.stylelintrc.js')],
+};
+```
+
+
 ## vscode eslint 格式化配置
+
+创建文件 .vscode/settings.json
 
 ```json
 {

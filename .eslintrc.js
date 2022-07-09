@@ -7,7 +7,8 @@ let KLXNormEslint = path.resolve(__dirname, './node_modules/@kunlunxu/norm/.esli
 try {
   fs.readFileSync(KLXNormEslint);
 } catch (e) {
-  KLXNormEslint = path.resolve(__dirname, '../@kunlunxu/norm/.eslintrc.js');
+  // 组件库
+  KLXNormEslint = path.resolve(__dirname, '../norm/.eslintrc.js');
 }
 
 module.exports = {
