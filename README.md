@@ -1,4 +1,4 @@
-# qy-create-react
+# create-react-app
 
 基于 React 和 Antd　的一套中后台集成框架, 只需通过配置即可完成后台管理端的开发
 
@@ -6,9 +6,9 @@
 
 ### 一、 初始化项目并安装依赖
 
-```shll
+```shell
 npm init -y
-npm i qy-create-react
+npm i @kunlunxu/create-react-app
 ```
 
 ### 二、 修改 npm 脚本
@@ -20,7 +20,7 @@ npm i qy-create-react
 },
 ```
 
-### 三、 添加文件 .qyrc.js 并进行配置
+### 三、 添加文件 .projectrc.js 并进行配置
 
 位于项目目录下
 
@@ -106,7 +106,7 @@ module.exports = config => {
 const path = require("path");
 
 module.exports = {
-  extends: [path.resolve(__dirname, "./node_modules/qy-norm/.eslintrc.js")],
+  extends: [path.resolve(__dirname, "./node_modules/@kunlunxu/norm/.eslintrc.js")],
 };
 ```
 

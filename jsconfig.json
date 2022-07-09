@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@qy/*": ["/*"],
-      "@qy-utils/*": ["src/utils/*"],
-      "@qy-containers/*": ["src/containers/*"],
-      "@qy-components/*": ["src/components/*"],
+      "@/*": ["/*"],
+      "@utils/*": ["src/utils/*"],
+      "@containers/*": ["src/containers/*"],
+      "@components/*": ["src/components/*"],
     },
   }
 }

@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### Features
 
 * 🎸 版本升级 ([bf575ce](https://github.com/qianyin925/qy-create-react/commit/bf575ce2d8c1ee533a8b5ed13cec031df468c8aa))
-* 🎸 架构调整: qyrc 配置实现 ([5047ca3](https://github.com/qianyin925/qy-create-react/commit/5047ca3fe165925aa0364aedf375e4633e40233a))
+* 🎸 架构调整: projectrc 配置实现 ([5047ca3](https://github.com/qianyin925/qy-create-react/commit/5047ca3fe165925aa0364aedf375e4633e40233a))
 * 🎸 整体架构调整 ([033ad19](https://github.com/qianyin925/qy-create-react/commit/033ad1910b90265ae856ea93fad52d8563ec992c))
 * examples 调整 ([524b66c](https://github.com/qianyin925/qy-create-react/commit/524b66ccade7d9ee8d3ec2918e1042b456f943e9))
 

@@ -45,7 +45,7 @@ export default {
                 },
               ],
             },
-            ... Array.from({ length: 20 }).map((v, index) => ({
+            ...Array.from({ length: 20 }).map((v, index) => ({
               key: `particle_1_${index}`,
               title: `particle_1_${index}`,
               icon: 'AndroidOutlined',

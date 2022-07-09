@@ -8,5 +8,5 @@ const webpackConfig = require('./webpack.config');
 const compiler = webpack(webpackConfig);
 
 compiler.run((err, stats) => {
-  console.log('------------->>> 编译完成1', err, stats);
+  console.log('------------->>> 编译完成', err, stats);
 });

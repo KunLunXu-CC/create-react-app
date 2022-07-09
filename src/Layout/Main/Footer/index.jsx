@@ -1,8 +1,8 @@
 import React from 'react';
-import qyrc from '@qy/.qyrc.js';
+import projectrc from '@/.projectrc.js';
 
-const Footer = qyrc?.footer;
+const Footer = projectrc?.footer;
 
 export default () => (
-  Footer ? <Footer/> : null
+  Footer ? <Footer /> : null
 );

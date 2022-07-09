@@ -15,10 +15,10 @@ const App = () => (
   <ConfigProvider locale={zhCN}>
     <Store>
       <Router>
-        <Layout/>
+        <Layout />
       </Router>
     </Store>
   </ConfigProvider>
 );
 
-reactDom.render(<App/>, document.getElementById('root'));
+reactDom.render(<App />, document.getElementById('root'));

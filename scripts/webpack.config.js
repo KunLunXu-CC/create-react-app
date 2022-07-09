@@ -66,7 +66,7 @@ module.exports = webpackFinal({
     rules: [
       {
         test: /\.(mjs|js|jsx)$/,
-        exclude: /node_modules\/(?!qy-create-react)/,
+        exclude: /node_modules\/(?!@kunlunxu\/create-react-app)/,
         use: [
           {
             loader: 'babel-loader',
@@ -149,10 +149,10 @@ module.exports = webpackFinal({
     },
 
     alias: {
-      '@qy': path.resolve(__dirname, '..'),
-      '@qy-utils': path.resolve(__dirname, '../src/utils'),
-      '@qy-containers': path.resolve(__dirname, '../src/containers'),
-      '@qy-components': path.resolve(__dirname, '../src/components'),
+      '@': path.resolve(__dirname, '..'),
+      '@utils': path.resolve(__dirname, '../src/utils'),
+      '@containers': path.resolve(__dirname, '../src/containers'),
+      '@components': path.resolve(__dirname, '../src/components'),
     },
   },
 

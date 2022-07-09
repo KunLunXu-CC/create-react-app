@@ -1,11 +1,14 @@
 export default (key, treeList) => {
   const result = [];
+
   const recursion = (list = []) => {
     if (!_.isArray(list) || list.length < 1) {
       return false;
     }
-    list.forEach(item => {
+
+    list.forEach((item) => {
       result.push(item);
+
       if (_.isArray(item.children) && item.children.length > 0) {
         recursion(item.children);
       } else if (item.key === key) {
@@ -16,10 +19,12 @@ export default (key, treeList) => {
     });
     result.pop();
   };
+
   try {
     recursion(treeList);
   } catch (e) {
     //
   }
+
   return result;
 };

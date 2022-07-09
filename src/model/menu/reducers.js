@@ -8,7 +8,7 @@
  * @return {Object} 更新后的状态
  */
 export const setSelectedKey = (state, { selectedKey }) => ({
-  ... state,
+  ...state,
   selectedKeys: [selectedKey],
 });
 
@@ -22,7 +22,7 @@ export const setSelectedKey = (state, { selectedKey }) => ({
  * @return {Object} 更新后的状态
  */
 export const setOpenKeys = (state, { openKeys }) => ({
-  ... state,
+  ...state,
   openKeys: _.isArray(openKeys) ? openKeys : [],
 });
 
@@ -34,8 +34,8 @@ export const setOpenKeys = (state, { openKeys }) => ({
  * @param {Object} state 当前 state
  * @return {Object} 更新后的状态
  */
-export const toggleCollapsed = state => {
+export const toggleCollapsed = (state) => {
   const collapsed = !state.collapsed;
   localStorage.setItem('menu', JSON.stringify({ collapsed }));
-  return { ... state, collapsed };
+  return { ...state, collapsed };
 };

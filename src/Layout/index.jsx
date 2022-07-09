@@ -6,10 +6,10 @@ import scss from './index.module.scss';
 
 export default () => (
   <div className={scss.layout}>
-    <Menu/>
+    <Menu />
     <div className={scss['layout-body']}>
-      <Header/>
-      <Main/>
+      <Header />
+      <Main />
     </div>
   </div>
 );

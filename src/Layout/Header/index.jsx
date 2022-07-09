@@ -1,15 +1,15 @@
 import React from 'react';
-import qyrc from '@qy/.qyrc.js';
+import projectrc from '@/.projectrc.js';
 import scss from './index.module.scss';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
-const Header = qyrc?.header;
+const Header = projectrc?.header;
 
 const useStateHook = () => {
   const dispatch = useDispatch();
-  const { collapsed } = useSelector(state => state.menu);
+  const { collapsed } = useSelector((state) => state.menu);
 
   const onToggleCollapsed = () => {
     dispatch({ type: 'menu/toggleCollapsed' });
@@ -26,10 +26,10 @@ export default () => {
       <div
         onClick={state.onToggleCollapsed}
         className={scss['header-collapsed']}>
-        {state.collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
+        {state.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </div>
       <div className={scss['header-body']}>
-        {Header ? <Header/> : null}
+        {Header ? <Header /> : null}
       </div>
     </div>
   );

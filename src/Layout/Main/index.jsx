@@ -1,15 +1,15 @@
 import React from 'react';
 import Footer from './Footer';
-import utils from '@qy-utils';
-import qyrc from '@qy/.qyrc.js';
+import utils from '@utils';
+import projectrc from '@/.projectrc.js';
 import scss from './index.module.scss';
-import NotFound from '@qy-containers/NotFound';
+import NotFound from '@containers/NotFound';
 import { Switch, Route } from 'react-router-dom';
 
 // 读取路由
-const router = utils.getRoots(qyrc.menu ?? []).reduce(
-  (total, ele) => ([... total, ... (ele?.routers ?? [])]),
-  []
+const router = utils.getRoots(projectrc.menu ?? []).reduce(
+  (total, ele) => ([...total, ...(ele?.routers ?? [])]),
+  [],
 );
 
 console.log('%c [ router ]', 'font-size:13px; background:pink; color:#bf2c9f;', router);
@@ -29,6 +29,6 @@ export default () => (
         <Route component={NotFound} />
       </Switch>
     </div>
-    <Footer/>
+    <Footer />
   </div>
 );

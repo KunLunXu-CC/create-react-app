@@ -10,14 +10,14 @@ const path = require('path');
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
 // terminate the Node.js process with a non-zero exit code.
-process.on('unhandledRejection', err => {
+process.on('unhandledRejection', (err) => {
   throw err;
 });
 
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(
-  x => x === 'build' || x === 'start'
+  (x) => x === 'build' || x === 'start',
 );
 
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
@@ -25,9 +25,9 @@ const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 // 判断脚本是否存在, 存在则执行对应的脚本
 if (['start', 'build'].includes(script)) {
   // 设置环境变量
-  const env = { ... process.env };
+  const env = { ...process.env };
   process.env = {
-    ... env,
+    ...env,
     NODE_ENV: script === 'start' ? 'development' : 'production', // node 开发环境
   };
 

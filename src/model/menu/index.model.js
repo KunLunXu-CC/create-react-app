@@ -5,7 +5,7 @@ const initState = {
   openKeys: [],
   selectedKeys: [],
   collapsed: JSON.parse(
-    localStorage.getItem('menu') ?? '{"collapsed": false}'
+    localStorage.getItem('menu') ?? '{"collapsed": false}',
   ).collapsed,
 };
 

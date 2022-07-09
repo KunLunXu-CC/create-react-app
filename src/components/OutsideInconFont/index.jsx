@@ -1,7 +1,7 @@
-import qyrc from '@qy/.qyrc.js';
+import projectrc from '@/.projectrc.js';
 import { createFromIconfontCN } from '@ant-design/icons';
 
-const iconFont = qyrc?.iconFont;
+const iconFont = projectrc?.iconFont;
 
 export default iconFont ? createFromIconfontCN({
   scriptUrl: iconFont,
