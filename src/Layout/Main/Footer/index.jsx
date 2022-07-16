@@ -1,5 +1,5 @@
 import React from 'react';
-import projectrc from '@/.projectrc.js';
+import projectrc from '@klx-cra/.projectrc.js';
 
 const Footer = projectrc?.footer;
 

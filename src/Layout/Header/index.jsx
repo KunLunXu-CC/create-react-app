@@ -1,6 +1,6 @@
 import React from 'react';
-import projectrc from '@/.projectrc.js';
 import scss from './index.module.scss';
+import projectrc from '@klx-cra/.projectrc.js';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';

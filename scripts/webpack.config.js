@@ -149,10 +149,10 @@ module.exports = webpackFinal({
     },
 
     alias: {
-      '@': path.resolve(__dirname, '..'),
-      '@utils': path.resolve(__dirname, '../src/utils'),
-      '@containers': path.resolve(__dirname, '../src/containers'),
-      '@components': path.resolve(__dirname, '../src/components'),
+      '@klx-cra': path.resolve(__dirname, '..'),
+      '@klx-cra-utils': path.resolve(__dirname, '../src/utils'),
+      '@klx-cra-containers': path.resolve(__dirname, '../src/containers'),
+      '@klx-cra-components': path.resolve(__dirname, '../src/components'),
     },
   },
 

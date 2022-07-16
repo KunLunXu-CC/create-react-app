@@ -1,6 +1,6 @@
 import React from 'react';
-import utils from '@utils';
 import logger from 'redux-logger';
+import utils from '@klx-cra-utils';
 import createSagaMiddleware from 'redux-saga';
 
 import { Provider } from 'react-redux';

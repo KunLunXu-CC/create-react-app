@@ -1,9 +1,9 @@
 import React from 'react';
 import Footer from './Footer';
-import utils from '@utils';
-import projectrc from '@/.projectrc.js';
+import utils from '@klx-cra-utils';
 import scss from './index.module.scss';
-import NotFound from '@containers/NotFound';
+import projectrc from '@klx-cra/.projectrc.js';
+import NotFound from '@klx-cra-containers/NotFound';
 import { useRoutes } from 'react-router-dom';
 
 // 读取路由

@@ -3,16 +3,16 @@ import React, {
   useEffect,
   Fragment,
 } from 'react';
-import utils from '@utils';
+import utils from '@klx-cra-utils';
 import classNames from 'classnames';
-import projectrc from '@/.projectrc.js';
 import scss from './index.module.scss';
 import logo from '../../../public/logo.png';
 import * as AntdIcon from '@ant-design/icons';
+import projectrc from '@klx-cra/.projectrc.js';
 
 import { Menu } from 'antd';
-import { OutsideInconFont } from '@components';
 import { useSelector, useDispatch } from 'react-redux';
+import { OutsideInconFont } from '@klx-cra-components';
 import { useLocation, matchPath, useNavigate } from 'react-router-dom';
 
 console.log('%c [ projectrc ]', 'font-size:13px; background:pink; color:#bf2c9f;', projectrc);

@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@/*": ["/*"],
-      "@utils/*": ["src/utils/*"],
-      "@containers/*": ["src/containers/*"],
-      "@components/*": ["src/components/*"],
+      "@klx-cra/*": ["/*"],
+      "@klx-cra-utils/*": ["src/utils/*"],
+      "@klx-cra-containers/*": ["src/containers/*"],
+      "@klx-cra-components/*": ["src/components/*"],
     },
   }
 }

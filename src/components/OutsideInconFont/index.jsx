@@ -1,4 +1,4 @@
-import projectrc from '@/.projectrc.js';
+import projectrc from '@klx-cra/.projectrc.js';
 import { createFromIconfontCN } from '@ant-design/icons';
 
 const iconFont = projectrc?.iconFont;
