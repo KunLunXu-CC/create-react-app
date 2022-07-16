@@ -13,7 +13,7 @@ import * as AntdIcon from '@ant-design/icons';
 import { Menu } from 'antd';
 import { OutsideInconFont } from '@components';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, useLocation, matchPath } from 'react-router-dom';
+import { useLocation, matchPath, useNavigate } from 'react-router-dom';
 
 console.log('%c [ projectrc ]', 'font-size:13px; background:pink; color:#bf2c9f;', projectrc);
 
@@ -27,9 +27,9 @@ const renderIcon = (data) => {
   return Icon ? <Icon /> : <OutsideInconFont type={data.icon} />;
 };
 
-const useStateHook = () => {
+export default () => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
 
   const {
@@ -39,10 +39,11 @@ const useStateHook = () => {
   } = useSelector((state) => state.menu);
 
   // 菜单 children
-  const menuCholdren = useMemo(() => {
+  const menuItems = useMemo(() => {
     const loop = (list) => list.map((ele) => {
       const icon = renderIcon(ele);
-      const title = (
+
+      const label = (
         <Fragment>
           {icon}
           {icon ? (
@@ -53,22 +54,11 @@ const useStateHook = () => {
         </Fragment>
       );
 
-      if (_.isArray(ele.children) && ele.children.length > 0) {
-        const SubMenu = ele.idGroup ? Menu.ItemGroup : Menu.SubMenu;
-        return (
-          <SubMenu
-            key={ele.key}
-            title={title}>
-            {loop(ele.children)}
-          </SubMenu>
-        );
-      }
-
-      return (
-        <Menu.Item key={ele.key}>
-          {title}
-        </Menu.Item>
-      );
+      return {
+        label,
+        key: ele.key,
+        children: _.isArray(ele.children) ? loop(ele.children) : void 0,
+      };
     });
     return loop(projectrc.menu ?? []);
   }, []);
@@ -78,7 +68,7 @@ const useStateHook = () => {
     const item = utils.getRoots(projectrc.menu ?? []).find(
       (ele) => ele.key === key,
     );
-    history.push(item.url || '404');
+    navigate(item.url || '404');
   };
 
   // subMenu 展开/关闭的回调
@@ -101,10 +91,9 @@ const useStateHook = () => {
 
   useEffect(() => {
     const menuList = projectrc.menu ?? [];
+
     const findMenu = utils.getRoots(menuList).find(
-      (ele) => (ele.router || []).find((v) => (
-        matchPath(location.pathname, v)
-      )),
+      (ele) => ele.routes.find((v) => matchPath(v, location.pathname)),
     );
 
     if (findMenu) {
@@ -120,27 +109,15 @@ const useStateHook = () => {
     }
   }, [location.pathname]);
 
-  return {
-    collapsed,
-    onSelectMenu,
-    menuCholdren,
-    onOpenChange,
-    menuControlledProps,
-  };
-};
-
-export default () => {
-  const state = useStateHook();
-
   return (
     <div className={classNames(
       scss.menu,
-      { [scss['menu-collapsed']]: state.collapsed },
+      { [scss['menu-collapsed']]: collapsed },
     )}>
       <div className={scss['menu-logo']}>
         <img
-          src={projectrc.logo?.img ?? logo}
           alt="logo"
+          src={projectrc.logo?.img ?? logo}
         />
         <div className={scss['menu-logo-title']}>
           {projectrc.logo?.title}
@@ -149,11 +126,11 @@ export default () => {
       <div className={scss['menu-body']}>
         <Menu
           mode="inline"
-          onSelect={state.onSelectMenu}
-          onOpenChange={state.onOpenChange}
-          {... state.menuControlledProps}>
-          {state.menuCholdren}
-        </Menu>
+          items={menuItems}
+          onSelect={onSelectMenu}
+          onOpenChange={onOpenChange}
+          {...menuControlledProps}
+        />
       </div>
     </div>
   );

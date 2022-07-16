@@ -1,3 +1,4 @@
+import React from 'react';
 import Home from './src/pages/Home';
 
 export default {
@@ -15,11 +16,10 @@ export default {
       title: '首页',
       icon: 'AndroidOutlined',
       url: '/',
-      routers: [
+      routes: [
         {
-          exact: true,
           path: '/',
-          component: Home,
+          element: <Home />,
         },
       ],
     },
@@ -38,11 +38,10 @@ export default {
               title: 'particle_1',
               icon: 'AndroidOutlined',
               url: '/canvas/particle/1',
-              routers: [
+              routes: [
                 {
-                  exact: true,
                   path: '/canvas/particle/1',
-                  component: () => ('particle_1'),
+                  element: 'particle_1',
                 },
               ],
             }

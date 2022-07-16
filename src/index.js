@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import Store from './model';
 import Layout from './Layout';
-import reactDom from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import zhCN from 'antd/es/locale/zh_CN';
 
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -21,4 +21,5 @@ const App = () => (
   </ConfigProvider>
 );
 
-reactDom.render(<App />, document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

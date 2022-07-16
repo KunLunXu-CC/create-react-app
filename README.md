@@ -25,17 +25,17 @@ npm i @kunlunxu/create-react-app
 位于项目目录下
 
 ```js
+import React from 'react';
 import Home from './src/pages/Home';
 
 export default {
   name: 2222,
-  webpackFinal: config => config,
   logo: {             // logo 配置
     img: void 0,      // logo 配置图片: require('*/**/*.png')
     title: '测试标题', // 标题
   },
-  footer: () => ('footer'),  // footer 组件
-  header: () => ('header'),  // header 组件
+  footer: () => ('footer'),  // 组件
+  header: () => ('header'),  // 组件
   iconFont: '//at.alicdn.com/t/font_1141137_lyeqynh5bq.js', // iconFont 外链
   menu: [  // 菜单配置
     {
@@ -43,11 +43,12 @@ export default {
       title: '首页',
       icon: 'AndroidOutlined',
       url: '/',
-      routers: [
+      routes: [
         {
-          exact: true,
           path: '/',
-          component: Home,
+          element: <Home />,
+          // caseSensitive: false, // Optional. Should be `true` if the static portions of the `path` should be matched in the same case.
+          // end: true, // Optional. Should be `true` if this pattern should match the entire URL pathname
         },
       ],
     },
@@ -66,11 +67,10 @@ export default {
               title: 'particle_1',
               icon: 'AndroidOutlined',
               url: '/canvas/particle/1',
-              routers: [
+              routes: [
                 {
-                  exact: true,
                   path: '/canvas/particle/1',
-                  component: () => ('particle_1'),
+                  element: 'particle_1',
                 },
               ],
             }
