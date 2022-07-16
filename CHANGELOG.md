@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.8](https://github.com/KunLunXu0-0/create-react-app/compare/v1.6.7...v1.6.8) (2022-07-16)
+
+
+### Features
+
+* 🎸 update alias ([7ebab4b](https://github.com/KunLunXu0-0/create-react-app/commit/7ebab4b870d04a2344d7dc32215e86c2fa58374a))
+
 ### [1.6.7](https://github.com/KunLunXu0-0/create-react-app/compare/v1.6.6...v1.6.7) (2022-07-16)
 
 
