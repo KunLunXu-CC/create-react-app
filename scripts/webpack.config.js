@@ -116,7 +116,7 @@ module.exports = webpackFinal({
         ],
       },
       {
-        test: /\.(png|jpg|gif|woff|svg|eot|ttf)$/,
+        test: /\.(png|jpg|gif|svg)$/,
         use: [{
           loader: 'url-loader',
           options: {
@@ -124,6 +124,13 @@ module.exports = webpackFinal({
             name: 'assets/[hash].[ext]',
           },
         }],
+      },
+      {
+        test: [/\.(ttf|woff|eot)$/],
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[name].[ext]',
+        },
       },
       {
         test: /\.(text|md)$/,
