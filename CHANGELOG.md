@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.9](https://github.com/KunLunXu0-0/create-react-app/compare/v1.6.8...v1.6.9) (2022-07-17)
+
+
+### Features
+
+* 🎸 update webpack ([f086016](https://github.com/KunLunXu0-0/create-react-app/commit/f086016a7a90b20fb5afd3b430da1cc746eaa34b))
+
 ### [1.6.8](https://github.com/KunLunXu0-0/create-react-app/compare/v1.6.7...v1.6.8) (2022-07-16)
 
 
