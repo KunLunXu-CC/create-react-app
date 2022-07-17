@@ -116,20 +116,11 @@ module.exports = webpackFinal({
         ],
       },
       {
-        test: /\.(png|jpg|gif|svg)$/,
-        use: [{
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            name: 'assets/[hash].[ext]',
-          },
-        }],
-      },
-      {
-        test: [/\.(ttf|woff|eot)$/],
+        // 图片、字体
+        test: [/\.(png|jpg|gif|svg)$/, /\.(ttf|woff|eot)$/],
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name].[ext]',
+          filename: 'assets/[hash].[ext]',
         },
       },
       {
