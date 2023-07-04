@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/KunLunXu-CC/create-react-app/compare/v1.6.13...v1.7.0) (2023-07-04)
+
+
+### Features
+
+* 🎸 修改 publicPath ([919da73](https://github.com/KunLunXu-CC/create-react-app/commit/919da735ddd6b2a0091ec8ed801c1fb5c6a863b3))
+
 ### [1.6.13](https://github.com/KunLunXu0-0/create-react-app/compare/v1.6.12...v1.6.13) (2023-02-13)
 
 ### [1.6.12](https://github.com/KunLunXu0-0/create-react-app/compare/v1.6.11...v1.6.12) (2023-02-13)
