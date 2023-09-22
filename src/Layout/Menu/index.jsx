@@ -1,3 +1,6 @@
+/* eslint-disable import/namespace */
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
 import React, {
   useMemo,
   useEffect,
@@ -12,7 +15,7 @@ import projectrc from '@klx-cra/.projectrc.js';
 
 import { Menu } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { OutsideInconFont } from '@klx-cra-components';
+import { OutsideIconFont } from '@klx-cra-components';
 import { useLocation, matchPath, useNavigate } from 'react-router-dom';
 
 console.log('%c [ projectrc ]', 'font-size:13px; background:pink; color:#bf2c9f;', projectrc);
@@ -24,7 +27,7 @@ const renderIcon = (data) => {
   }
 
   const Icon = AntdIcon[data.icon];
-  return Icon ? <Icon /> : <OutsideInconFont type={data.icon} />;
+  return Icon ? <Icon /> : <OutsideIconFont type={data.icon} />;
 };
 
 export default () => {
@@ -107,7 +110,7 @@ export default () => {
         selectedKey: _.last(path).key,
       });
     }
-  }, [location.pathname]);
+  }, [dispatch, location.pathname, openKeys]);
 
   return (
     <div className={classNames(

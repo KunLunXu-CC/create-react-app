@@ -10,6 +10,7 @@ export default {
   footer: () => ('footer'),  // 组件
   header: () => ('header'),  // 组件
   iconFont: '//at.alicdn.com/t/font_1141137_lyeqynh5bq.js', // iconFont 外链
+  // useHashRouter: true, // 是否使用 hash 路由
   menu: [  // 菜单配置
     {
       key: 'home',

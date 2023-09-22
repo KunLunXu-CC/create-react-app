@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
 import React from 'react';
 import Footer from './Footer';
 import utils from '@klx-cra-utils';
