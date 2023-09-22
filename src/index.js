@@ -1,5 +1,6 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import moment from 'moment';
 import Store from './model';
 import Layout from './Layout';
 import ReactDOM from 'react-dom/client';
@@ -7,12 +8,14 @@ import zhCN from 'antd/es/locale/zh_CN';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
-import 'moment/locale/zh-cn';
+import locale from 'antd/locale/zh_CN';
+
 import './assets/style';
-moment.locale('zh-cn');
+
+import 'dayjs/locale/zh-cn';
 
 const App = () => (
-  <ConfigProvider locale={zhCN}>
+  <ConfigProvider locale={locale}>
     <Store>
       <Router>
         <Layout />
