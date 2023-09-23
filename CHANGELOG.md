@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/KunLunXu-CC/create-react-app/compare/v1.10.0...v1.10.1) (2023-09-23)
+
+
+### Features
+
+* 🎸 add favicon ([a2e3d99](https://github.com/KunLunXu-CC/create-react-app/commit/a2e3d99e715af666ccc7235b88367f7537d4c156))
+
 ## [1.10.0](https://github.com/KunLunXu-CC/create-react-app/compare/v1.9.4...v1.10.0) (2023-09-23)
 
 
