@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.9.4](https://github.com/KunLunXu-CC/create-react-app/compare/v1.9.3...v1.9.4) (2023-09-23)
+
+
+### Bug Fixes
+
+* 🐛 首次进入白屏 ([54ac5e1](https://github.com/KunLunXu-CC/create-react-app/commit/54ac5e14fb2fb326c704205332c36ea87163d2d3))
+
 ### [1.9.3](https://github.com/KunLunXu-CC/create-react-app/compare/v1.9.2...v1.9.3) (2023-09-22)
 
 ### [1.9.2](https://github.com/KunLunXu-CC/create-react-app/compare/v1.9.1...v1.9.2) (2023-09-22)
