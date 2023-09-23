@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/KunLunXu-CC/create-react-app/compare/v1.9.4...v1.10.0) (2023-09-23)
+
+
+### Features
+
+* 🎸 add document.title ([f8955a2](https://github.com/KunLunXu-CC/create-react-app/commit/f8955a2462f72efbee3a120cb54116117582cc1d))
+
+
+### Bug Fixes
+
+* 🐛 remove scroll ([b6f2bc0](https://github.com/KunLunXu-CC/create-react-app/commit/b6f2bc054a63824e84a3e536c2101e9d011a8cae))
+
 ### [1.9.4](https://github.com/KunLunXu-CC/create-react-app/compare/v1.9.3...v1.9.4) (2023-09-23)
 
 
