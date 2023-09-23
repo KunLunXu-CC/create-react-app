@@ -5,6 +5,7 @@ import React, {
   useMemo,
   useEffect,
   Fragment,
+  useCallback,
 } from 'react';
 import utils from '@klx-cra-utils';
 import classNames from 'classnames';
@@ -67,20 +68,20 @@ export default () => {
   }, []);
 
   // 选择菜单
-  const onSelectMenu = ({ key }) => {
+  const onSelectMenu = useCallback(({ key }) => {
     const item = utils.getRoots(projectrc.menu ?? []).find(
       (ele) => ele.key === key,
     );
     navigate(item.url || '404');
-  };
+  }, [navigate]);
 
   // subMenu 展开/关闭的回调
-  const onOpenChange = (openKeys) => {
+  const onOpenChange = useCallback((openKeys) => {
     dispatch({
       openKeys,
       type: 'menu/setOpenKeys',
     });
-  };
+  }, [dispatch]);
 
   // 菜单 props
   const menuControlledProps = useMemo(() => (collapsed ? {
@@ -101,10 +102,15 @@ export default () => {
 
     if (findMenu) {
       const path = utils.getPath(findMenu.key, menuList);
+
+      // 设置页面 title
+      document.title = `${projectrc.logo?.title ? `${projectrc.logo.title}-` : ''}${_.last(path).title}`;
+
       dispatch({
         type: 'menu/setOpenKeys',
         openKeys: [...openKeys, ...path.slice(0, -1).map((v) => v.key)],
       });
+
       dispatch({
         type: 'menu/setSelectedKey',
         selectedKey: _.last(path).key,
