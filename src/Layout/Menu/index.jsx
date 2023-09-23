@@ -110,7 +110,9 @@ export default () => {
         selectedKey: _.last(path).key,
       });
     }
-  }, [dispatch, location.pathname, openKeys]);
+    // 这个依赖不能该噢, 只需要在 pathname 变更执行
+  }, [location.pathname]);
+
 
   return (
     <div className={classNames(
